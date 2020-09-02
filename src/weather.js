@@ -8,7 +8,7 @@ class Weather{
     }
 
     async getWeather(){
-        const response =  await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.city}&appid=${this.apiKey}&units=metric`)
+        const response =  await fetch(`https://cors-anywhere/http://api.openweathermap.org/data/2.5/weather?q=${this.city}&appid=${this.apiKey}&units=metric`)
         const resData = await response.json();
         this.loader.style.display = 'none';
         return resData;
