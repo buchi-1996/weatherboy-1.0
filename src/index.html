@@ -3,54 +3,94 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
-  integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <title>my weather</title>
+  <title>Document</title>
 </head>
 <body>
   <div class="container">
-    <div class="row">
-      <div class="col-12 col-md-10 mx-auto p-0">
-        <div class="card">
-          <img src="./images/Ripple-1s-200px.gif" alt="" id="img__loader">
-          <div class="card-header">
-            <h4>Weatherboy</h4>
-            <form class="search__box">
-              <input type="search" id="search" placeholder="Boston..." class="form-control">
-              <button type="submit" id="submit__btn"><i class="fa fa-search"></i></button>
-            </form>
-          </div>
-          <div class="card-body">
-            <h1 class="city__name text-center text-capitalize"></h1>
-            <h5 class="app__date text-center text-capitalize"></h5>
-            <div class="weather__container">
-              <h3 class="weather__result text-center"></h3>
-              <div class="weather__icon">
-                <img src="" alt="">
-                <p class="feels__like text-capitalize"></p>
+    <div class="app__left">
+      <img src="./images/Ripple-1s-200px.gif" alt="" id="img__loader">
+      <div class="app__header">
+        <div class="app__brand">Weatherboy</div>
+        <form class="search__form">
+          <input type="search" id="search" placeholder="Boston....">
+          <button type="submit" id="submit"><i class="fa fa-search"></i></button>
+        </form>
+      </div>
+      <div class="app__body">
+          <div class="city__details">
+              <h2 class="city__name">Boston</h2>
+              <p class="date">Saturday, September 18, 2020</p>
+              <div class="weather__rep">
+                <h1 class="city__temp">21&deg;c</h1>
+                <div class="weather__img">
+                    <img src="" alt="img">
+                    <p class="weather__desc">partly cloudy</p>
+                </div>
               </div>
+              <div class="hold__event">
+                  <h2>Event will hold</h2>
+              </div>
+          </div>
+          <div class="more__details">
+              <div class="wind box">
+                  <span class="title">Wind</span>
+                  <h3 class="wind__range">30</h3>
+                <span class="symbol">km/h</span>
+              </div>
+              <div class="feels__like box">
+                <span class="title">Feels Like</span>
+                <h3 class="feel__range">30</h3>
+              <span class="symbol"><img src="" alt="" class="image"></span>
+            </div>
+            <div class="humidity box">
+                <span class="title">Humidity</span>
+                <h3 class="humidity__range">30</h3>
+              <span class="symbol">%</span>
             </div>
           </div>
-          <div class="card-footer d-flex justify-content-between">
-            <div class="wind">
-              <span>Wind</span>
-              <h4>13 km/h</h4>
-            </div>
-            <div class="rain">
-              <span>Feels like</span>
-              <h4>0%</h4>
-            </div>
-            <div class="humidity">
-              <span>Humidity</span>
-              <h4>88%</h4>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
+    <div class="app__right">
+        <div class="card">
+            <h4 class="card__heading">list of available cities</h4>
+            <ul>
+                <li>a country state</li>
+                <li>a country state</li>
+                <li>a country state</li>
+                <li>a country state</li>
+                <li>a country state</li>
+                <li>a country state</li>
+                <li>a country state</li>
+                <li>a country state</li>
+                <li>a country state</li>
+                <li>a country state</li>
+                <li>a country state</li>
+                <li>a country state</li>
+                <li>a country state</li>
+                <li>a country state</li>
+                <li>a country state</li>
+                <li>a country state</li>
+                <li>a country state</li>
+                <li>a country state</li>
+                <li>a country state</li>
+                <li>a country state</li>
+                <li>a country state</li>
+                <li>a country state</li>
+                <li>a country state</li>
+                <li>a country state</li>
+                <li>a country state</li>
+                <li>a country state</li>
+                <li>a country state</li>
+                <li>a country state</li>
+                <li>a country state</li>
+                <li>a country state</li>
+                <li>a country state</li>        
+            </ul>
+        </div>
+    </div>
   </div>
-  <div class="btn btn-info btn-sm w-100 alert empty__field font-weight-bold"></div>
-  <div class="btn btn-danger w-100 alert wrong__city font-weight-bold"></div>
+  <div class="empty__field">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum officia enim corporis?</div>
+  <div class="wrong__city">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum officia enim corporis?</div>
 </body>
 </html>

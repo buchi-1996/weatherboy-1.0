@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', e => {
     app.getCurrentWeather();
 });
 
-document.querySelector('.card').addEventListener('submit', (e) => {
+document.querySelector('.app__left').addEventListener('submit', (e) => {
     e.preventDefault();
     const app = new App();
     let myCity = document.querySelector('#search').value;

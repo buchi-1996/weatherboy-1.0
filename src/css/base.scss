@@ -1,211 +1,351 @@
-/* This is an example of using Sass, otherwise plain CSS works too*/
-// $primary-background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
-// ;
-
-// body {
-//   background: $primary-background;
-// }
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
 
-
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-:root{
-    --bg-light: #f8f9fa;
-    --bg-dark: #343a40;
-    --info: #17a2b8;
-  }
-  
-  body{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Nunito Sans', sans-serif;
-    background: url(../images/a_38_20140127223707.jpg)center/cover no-repeat;
-    min-height: 100vh;
-  }
-  
-  .card{
-    position: relative;
-    background:rgba(85, 71, 71, 0.253);
-    color: #fff;
-  }
-  
-  #img__loader{
+html,
+body {
+  min-height: 100vh;
+}
+
+body {
+  background: linear-gradient(rgba(0, 0, 0, 0.568), rgba(0, 0, 0, 0.1)),
+    url(../images/bora_bora_bungalows-wallpaper-1024x768.jpg) center/cover no-repeat;
+  color: #fff;
+  font-family: 'Nunito Sans', sans-serif;
+  position: relative;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+
+.app__left {
+  position: relative;
+  margin-right: 30px;
+  flex: 1;
+  padding: 10px 0;
+}
+
+.app__left .app__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.app__header .app__brand {
+  font-size: 1.4em;
+}
+
+.app__header .search__form {
+  height: 40px;
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  box-shadow: 0 0 6px -2px #ccc;
+  border-radius: 30px;
+}
+
+.search__form #search {
+  height: 40px;
+  flex: 1;
+  padding: 10px;
+  border: none;
+  outline: none;
+  font-size: 0.9em;
+}
+
+.search__form button {
+  height: 40px;
+  padding: 0 20px;
+  border: none;
+  outline: none;
+  background: gray;
+  color: #fff;
+  font-size: 0.9em;
+}
+
+.app__body {
+  margin: 40px 0 10px;
+}
+
+.city__details .city__name {
+  font-size: 3em;
+  text-transform: capitalize;
+  letter-spacing: 10px;
+  color: red;
+}
+
+.city__details .date {
+  font-size: 1.3rem;
+  letter-spacing: 10px;
+  line-height: 1.4;
+}
+
+.weather__rep {
+  display: flex;
+  align-items: center;
+}
+
+.weather__rep .city__temp {
+  font-size: 10em;
+  margin-right: 20px;
+  font-weight: 300;
+}
+
+.weather__img{
+  text-align: center;
+}
+
+.weather__desc{
+  margin-top: -1.5em;
+  margin-bottom: 0.8rem;
+}
+
+.hold__event h2 {
+  font-weight: normal;
+}
+
+.more__details {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 40px 0 0;
+}
+
+.more__details .box {
+  background: rgba(34, 34, 34, 0.288);
+  width: 200px;
+  height: 180px;
+  margin-bottom: 10px;
+}
+
+.box .title {
+  text-align: center;
+  font-size: 1.3em;
+  display: block;
+  padding: 10px 0;
+  border-bottom: 1px inset #aaa;
+}
+
+.box h3 {
+  text-align: center;
+  margin: 10px;
+  font-size: 2.5em;
+}
+
+.box .symbol {
+  text-align: center;
+  display: block;
+  font-size: 2em;
+}
+
+.app__right {
+  width: 28%;
+  padding: 20px 0;
+}
+
+.app__right .card {
+  position: sticky;
+  top: 0;
+  box-shadow: 0 0 1em #000;
+}
+
+
+.card ul {
+  height: 570px;
+  overflow-y: scroll;
+}
+
+.app__right .card h4 {
+  font-size: 1.5em;
+  padding: 10px 0;
+  text-align: center;
+  background: rgba(238, 238, 238, 0.411);
+  text-transform: capitalize;
+}
+
+.app__right ul li {
+  list-style-type: none;
+  padding: 10px 12px;
+  background: rgba(0, 0, 0, 0.356);
+  border-bottom: 1px solid #eee;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.app__right ul li:hover {
+  background: rgba(170, 170, 170, 0.479);
+}
+
+.empty__field{
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 100%;
+    background: #66ccff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: -100px;
+    transition: all .5s ease-in-out;
+}
+
+.wrong__city{
+    top: 0;
+    position: absolute;
+    display: block;
+    width: 100%;
+    background: red;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: -100px;
+    transition: all .5s ease-in-out;
+}
+
+.empty__field.slideIn{
+  margin-top: 0;
+}
+
+.wrong__city.slideIn{
+  margin-top: 0;
+}
+
+#img__loader{
     position: absolute;
     display: none;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
-  
-  .card-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  
-  .search__box{
-    flex: 1;
-    height: 40px;
-    margin-left: 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 40px;
-    overflow: hidden;
-  }
-  
-  #search{
-    flex: 1;
-    height: 40px;
-    box-shadow: none !important;
-    border-radius: 0 !important;
-    border:  none !important;
-  }
-  
-  
-  button{
-    height: 40px;
-    border: none;
-    border-top-right-radius: 30px;
-    border-bottom-right-radius: 30px;
-    background: orangered;
-    color: #fff;
-    width: 55px;
-    outline: none;
-  }
-  
-  button:focus{
-    outline: none;
-  }
-  
-  button:hover{
-    background: #aaa;
-    color: var(--bg-dark);
-  }
-  
-  .city__name{
-    font-size: 3rem;
-    margin-bottom: 1px;
-  }
-  
-  .weather__container{
-    display: flex;
-    margin: 50px 0;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .weather__container img{
-    object-fit: contain;
-    /* width: 140px; */
-  }
-  
-  .weather__icon{
-    margin-left: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .feels__like{
-    margin-top: -25px;
-  }
-  
-  .weather__result{
-    font-size: 6rem;
-    font-weight: 300;
-  
-  }
-  
-  .card-footer{
-    background: rgba(0, 0, 0, 0.301);
-  }
-  
-  .wind, .rain, .humidity{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .alert{
-    position: absolute;
-    top: 0;
-    margin-top: -100px;
-    transition: all .5s ease-in-out;
-  }
-  
-  .empty__field.slideIn{
-    margin-top: 0;
-  }
-  
-  .wrong__city.slideIn{
-    margin-top: 0;
-  }
-  
-  
-  
-  @media screen and (max-width: 768px){
-   
-  
-    .card-header{
-      flex-direction: column;
-    }
-  
-    .search__box{
-      margin-left: 0;
-      width: 100%;
-    }
-  }
-  
-  @media screen and (max-width: 568px){
-    .card{
-      margin-top: 0;
-      height: 100vh;
-      color: #fff;
-    }
-  
-    .weather__container{
-      margin-top: 40px;
-      flex-direction: column;
-    }
-  
-    .weather__icon{
-      margin-left: 0px;
-    }
-  }
-  
-  @media screen and (max-width: 320px){
-    .card{
-      margin-top: 0;
-      height: 100vh;
-      color: #fff;
-    }
-  
-    .card-body .city__name{
-      font-size: 2rem;
-    }
 
-    .card-body .app__date{
-      font-size: 1rem;
-    }
-    
-    .weather__container{
-      margin-top: 20px;
-      flex-direction: column;
-    }
-  
-    .weather__icon{
-      margin-left: 0px;
-    }
+  .feels__like img{
+    margin-top: -1.2em;
   }
+
+@media screen and (max-width: 1040px) {
+  .app__left .app__header {
+    flex-direction: column;
+    margin-top: -20px;
+  }
+
+  .city__details {
+    text-align: center;
+  }
+
+  .weather__rep {
+    justify-content: center;
+  }
+
+  .app__header .search__form {
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  .more__details .box {
+    background: rgba(34, 34, 34, 0.288);
+    width: 150px;
+    height: 170px;
+    margin: 15px;
+  }
+}
+
+@media screen and (max-width: 810px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .app__left {
+    margin-right: 0;
+  }
+
+  .app__right {
+    margin: 10px auto;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .city__details {
+    text-align: center;
+  }
+
+  .city__details .city__name {
+    font-size: 3.4em;
+    letter-spacing: normal;
+    font-weight: 300;
+  }
+
+  .city__details .date {
+    font-size: 1.3rem;
+    letter-spacing: normal;
+    line-height: normal;
+  }
+
+  .app__left .app__header {
+    flex-direction: column;
+  }
+
+  .app__header .search__form {
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .weather__rep {
+    flex-direction: column;
+  }
+
+  .weather__rep .city__temp {
+    font-size: 9em;
+    margin-right: 0px;
+    margin-top: 20px;
+  }
+
+  .more__details .box {
+    background: rgba(34, 34, 34, 0.288);
+    width: 100px;
+    height: 180px;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .more__details {
+    justify-content: center;
+  }
+
+  .city__details .city__name {
+    font-size: 3em;
+    letter-spacing: normal;
+    font-weight: 300;
+  }
+
+  .city__details .date {
+    font-size: 1.2em;
+    letter-spacing: normal;
+    line-height: normal;
+  }
+
+  .more__details .box {
+    margin: 10px;
+  }
+
+  .weather__rep .city__temp {
+    font-size: 6em;
+    margin-right: 0;
+    text-align: center;
+    margin-top: 15px;
+  }
+}
