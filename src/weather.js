@@ -5,10 +5,12 @@ class Weather{
         this.city = city;
         this.apiKey = 'aaf6e61337fd5555767d7bd243858055';
         this.loader = document.querySelector('#img__loader');
+
+        // const response =  await fetch(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=${this.city}&appid=${this.apiKey}&units=metric`)
     }
 
     async getWeather(){
-        const response =  await fetch(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=${this.city}&appid=${this.apiKey}&units=metric`)
+        const response =  await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.city}&appid=${this.apiKey}&units=metric`)
         const resData = await response.json();
         this.loader.style.display = 'none';
         return resData;

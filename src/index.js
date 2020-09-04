@@ -9,12 +9,15 @@ import './images/Ripple-1s-200px.gif';
 
 
 import myWeather from './Weather';
-import ui from './UI';
+import ui from './ui';
 import myStore from './Storage';
+import myCity from './cities';
+
 
 
 class App{
     constructor(){
+        this.list = document.querySelectorAll('.cities');
         this.loader = document.querySelector('#img__loader');
     }
 
@@ -32,12 +35,19 @@ class App{
         .catch(err => console.log(err));
     }
 
+    getCityText(item){
+        myStore.setData(item);
+        myWeather.changeCity(item);
+        this.getCurrentWeather();
+    }
+
     
 }
 
 document.addEventListener('DOMContentLoaded', e => {
     const app = new App();
     ui.showDate();
+    ui.populateTable();
     app.getCurrentWeather();
 });
 
@@ -53,6 +63,9 @@ document.querySelector('.app__left').addEventListener('submit', (e) => {
     }else{
         ui.showAlert('.empty__field', 'insert city name before hitting enter');
     }
-    
-    
 });
+
+document.querySelector('.cities').addEventListener('click', (e)=>{
+    const app = new App();
+    app.getCityText(e.target.textContent);
+})

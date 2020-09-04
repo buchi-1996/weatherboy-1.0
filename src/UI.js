@@ -1,7 +1,9 @@
 import date from './Date';
+import myCity from './cities';
 
-class UI{
+class Ui{
     constructor(){
+        this.cities = document.querySelector('.cities');
         this.image = document.querySelector('.image');
         this.input = document.querySelector('#search');
         this.cityName = document.querySelector('.city__name');
@@ -55,8 +57,16 @@ class UI{
         }, 3000)
     }
 
+    populateTable(){
+         myCity.getCities()
+         .then(data => {
+            const list = data.map(x => `<p class="list__item"><img src=${x.flag} class="flag__img">${x.city}</p>`).join('');
+            this.cities.innerHTML = list;
+         });
+    }
+
 }
 
 
-const ui = new UI();
+const ui = new Ui();
 export default ui;
